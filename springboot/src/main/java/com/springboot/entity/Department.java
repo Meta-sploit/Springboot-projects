@@ -12,6 +12,10 @@ public class Department {
     Long DepartmentId;
     String DepartmentName;
     String DepartmentAddress;
+
+    public Department() {
+    }
+
     String DepartmentCode;
 
     public Department(Long departmentId, String departmentName, String departmentAddress, String departmentCode) {
