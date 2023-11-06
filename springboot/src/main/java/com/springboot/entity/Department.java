@@ -9,61 +9,61 @@ import javax.persistence.Id;
 public class Department {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    Long DepartmentId;
-    String DepartmentName;
-    String DepartmentAddress;
+    Long departmentId;
+    String departmentName;
+    String departmentAddress;
 
     public Department() {
     }
 
-    String DepartmentCode;
+    String departmentCode;
 
     public Department(Long departmentId, String departmentName, String departmentAddress, String departmentCode) {
-        DepartmentId = departmentId;
-        DepartmentName = departmentName;
-        DepartmentAddress = departmentAddress;
-        DepartmentCode = departmentCode;
+        this.departmentId = departmentId;
+        this.departmentName = departmentName;
+        this.departmentAddress = departmentAddress;
+        this.departmentCode = departmentCode;
     }
 
     @Override
     public String toString() {
         return "Department{" +
-                "DepartmentId=" + DepartmentId +
-                ", DepartmentName='" + DepartmentName + '\'' +
-                ", DepartmentAddress='" + DepartmentAddress + '\'' +
-                ", DepartmentCode='" + DepartmentCode + '\'' +
+                "DepartmentId=" + departmentId +
+                ", DepartmentName='" + departmentName + '\'' +
+                ", DepartmentAddress='" + departmentAddress + '\'' +
+                ", DepartmentCode='" + departmentCode + '\'' +
                 '}';
     }
 
     public Long getDepartmentId() {
-        return DepartmentId;
+        return departmentId;
     }
 
     public void setDepartmentId(Long departmentId) {
-        DepartmentId = departmentId;
+        this.departmentId = departmentId;
     }
 
     public String getDepartmentName() {
-        return DepartmentName;
+        return departmentName;
     }
 
     public void setDepartmentName(String departmentName) {
-        DepartmentName = departmentName;
+        this.departmentName = departmentName;
     }
 
     public String getDepartmentAddress() {
-        return DepartmentAddress;
+        return departmentAddress;
     }
 
     public void setDepartmentAddress(String departmentAddress) {
-        DepartmentAddress = departmentAddress;
+        this.departmentAddress = departmentAddress;
     }
 
     public String getDepartmentCode() {
-        return DepartmentCode;
+        return departmentCode;
     }
 
     public void setDepartmentCode(String departmentCode) {
-        DepartmentCode = departmentCode;
+        this.departmentCode = departmentCode;
     }
 }
