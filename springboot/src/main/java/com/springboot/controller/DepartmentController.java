@@ -3,6 +3,7 @@ package com.springboot.controller;
 import com.springboot.entity.Department;
 import com.springboot.service.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,12 +20,16 @@ public class DepartmentController {
     public Department saveDepartment(@RequestBody Department department){
         return departmentService.save(department);
     }
-    @GetMapping("/getAll")
+    @GetMapping("/Department")
     public List<Department> getAllDepartment(){
         return departmentService.getAllDepartment();
     }
-    @GetMapping("/getDepartmentById/{id}")
+    @GetMapping("/Department/{id}")
     public Department fetchDepartmentById(@PathVariable("id") Long DepartmentId){
         return departmentService.fetchDepartmentById(DepartmentId);
+    }
+    @DeleteMapping("/Department/{id}")
+    public String deleteDepartmentById(@PathVariable("id") Long DepartmentId){
+        return departmentService.deleteDepartmentById(DepartmentId);
     }
 }
