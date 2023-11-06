@@ -19,28 +19,34 @@ import javax.validation.Valid;
 public class DepartmentController {
     @Autowired
     DepartmentService departmentService;
+
     @PostMapping("/saveDepartment")
-    public Department saveDepartment(@Valid @RequestBody Department department){
+    public Department saveDepartment(@Valid @RequestBody Department department) {
         return departmentService.save(department);
     }
+
     @GetMapping("/Department")
-    public List<Department> getAllDepartment(){
+    public List<Department> getAllDepartment() {
         return departmentService.getAllDepartment();
     }
+
     @GetMapping("/Department/{id}")
-    public Department fetchDepartmentById(@PathVariable("id") Long DepartmentId){
+    public Department fetchDepartmentById(@PathVariable("id") Long DepartmentId) {
         return departmentService.fetchDepartmentById(DepartmentId);
     }
+
     @DeleteMapping("/Department/{id}")
-    public String deleteDepartmentById(@PathVariable("id") Long DepartmentId){
+    public String deleteDepartmentById(@PathVariable("id") Long DepartmentId) {
         return departmentService.deleteDepartmentById(DepartmentId);
     }
+
     @PutMapping("/Department/{id}")
-    public Department updateDepartmentById(@PathVariable("id") Long DepartmentId, @RequestBody Department department){
-        return departmentService.updateDepartmentById(DepartmentId,department);
+    public Department updateDepartmentById(@PathVariable("id") Long DepartmentId, @RequestBody Department department) {
+        return departmentService.updateDepartmentById(DepartmentId, department);
     }
+
     @GetMapping("/Department/name/{name}")
-    public Department getDepartmentByName(@PathVariable("name") String DepartmentName){
+    public Department getDepartmentByName(@PathVariable("name") String DepartmentName) {
         return departmentService.getDepartmentByName(DepartmentName);
     }
 }

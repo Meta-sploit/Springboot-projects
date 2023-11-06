@@ -56,8 +56,8 @@ public class DepartmentServiceImp implements DepartmentService {
     public Department getDepartmentByName(String departmentName) {
         return departmentRepository.findByDepartmentNameIgnoreCase(departmentName);
         /***
-            string IgnoreCase appended to function so that 
-            irrespective of upper or lower case our code will work
-        ***/
+         * string IgnoreCase appended to function so that
+         * irrespective of upper or lower case our code will work
+         ***/
     }
 }
