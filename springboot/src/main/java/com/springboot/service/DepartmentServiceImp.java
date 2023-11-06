@@ -12,14 +12,20 @@ public class DepartmentServiceImp implements DepartmentService {
 
     @Autowired
     DepartmentRepository departmentRepository;
+
     @Override
     public Department save(Department department) {
-       return departmentRepository.save(department);
+        return departmentRepository.save(department);
     }
 
     @Override
     public List<Department> getAllDepartment() {
-        List<Department> list=departmentRepository.findAll();
+        List<Department> list = departmentRepository.findAll();
         return list;
+    }
+
+    @Override
+    public Department fetchDepartmentById(Long departmentId) {
+        return departmentRepository.findById(departmentId).get();
     }
 }
