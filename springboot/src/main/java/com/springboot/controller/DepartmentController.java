@@ -13,12 +13,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 @RestController
 public class DepartmentController {
     @Autowired
     DepartmentService departmentService;
     @PostMapping("/saveDepartment")
-    public Department saveDepartment(@RequestBody Department department){
+    public Department saveDepartment(@Valid @RequestBody Department department){
         return departmentService.save(department);
     }
     @GetMapping("/Department")
