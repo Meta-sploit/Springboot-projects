@@ -2,6 +2,9 @@ package com.springboot.controller;
 
 import com.springboot.entity.Department;
 import com.springboot.service.DepartmentService;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,13 +23,17 @@ public class DepartmentController {
     @Autowired
     DepartmentService departmentService;
 
+    private final Logger logger= LoggerFactory.getLogger(DepartmentController.class);
+
     @PostMapping("/saveDepartment")
     public Department saveDepartment(@Valid @RequestBody Department department) {
+        logger.info("Inside the 'saveDepartment' method of controller DepartmentController");
         return departmentService.save(department);
     }
 
     @GetMapping("/Department")
     public List<Department> getAllDepartment() {
+         logger.info("Inside the 'getAllDepartment' method of controller DepartmentController");
         return departmentService.getAllDepartment();
     }
 
