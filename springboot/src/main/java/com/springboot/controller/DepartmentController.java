@@ -1,5 +1,6 @@
 package com.springboot.controller;
 
+import com.springboot.ExceptionHandling.DepartmentNotfoundExpetion;
 import com.springboot.entity.Department;
 import com.springboot.service.DepartmentService;
 
@@ -38,7 +39,7 @@ public class DepartmentController {
     }
 
     @GetMapping("/Department/{id}")
-    public Department fetchDepartmentById(@PathVariable("id") Long DepartmentId) {
+    public Department fetchDepartmentById(@PathVariable("id") Long DepartmentId) throws DepartmentNotfoundExpetion {
         return departmentService.fetchDepartmentById(DepartmentId);
     }
 
