@@ -1,0 +1,22 @@
+server:
+   port: 8082
+spring:
+  datasource:
+    driverClassName: org.h2.Driver
+    password: password
+    url: jdbc:h2:mem:testdb
+    username: sa
+  h2:
+    console:
+        enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+welcome:
+  message: '"Welcome to the home page"'
+
+#To expose all the endpoint for actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
