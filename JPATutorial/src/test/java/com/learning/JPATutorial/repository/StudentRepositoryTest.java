@@ -28,7 +28,7 @@ class StudentRepositoryTest {
         Gaurdian gaurdian=new Gaurdian("nikhil","988988998","nikhil@gmail.com");
 
         Student student = Student.builder()
-                .emailId("abhi@gmail.com")
+                .emailId("raghu@gmail.com")
                 .firstName("raghu")
                 .secondName("chauhan")
                 .gaurdian(gaurdian)
@@ -41,4 +41,17 @@ class StudentRepositoryTest {
         System.out.println("studentList = " + studentList);
     }
 
+    @Test
+    public void getStudentByName(){
+        List<Student> students=studentRepository.getStudentByfirstName("raghu");
+        System.out.println("students = " + students);
+
+    }
+
+    @Test
+    public void getStudentByEmailAddress(){
+        Student students=studentRepository.getStudentByEmailAddress("raghu@gmail.com");
+        System.out.println("students = " + students);
+
+    }
 }
