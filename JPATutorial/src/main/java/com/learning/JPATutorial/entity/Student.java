@@ -1,6 +1,9 @@
 package com.learning.JPATutorial.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
@@ -12,6 +15,9 @@ import javax.persistence.*;
                 columnNames = "email_address"
         )
 )
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Student {
 
     @Id
