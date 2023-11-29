@@ -15,4 +15,10 @@ public interface StudentRepository extends JpaRepository<Student,Long> {
     // ?1 means matching first letter
     @Query("Select s from Student s where s.emailId=?1")
     Student getStudentByEmailAddress(String email_address);
+
+    @Query(
+            value = "SELECT * FROM student s where s.email_address=?1",
+            nativeQuery = true
+    )
+    Student getStudentByEmailAddressNative(String email_address);
 }
