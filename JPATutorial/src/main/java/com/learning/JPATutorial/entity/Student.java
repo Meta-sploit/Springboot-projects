@@ -28,7 +28,6 @@ public class Student {
     private String secondName;
     @Column(name = "email_address", nullable = false)
     private String emailId;
-    private String gaurdianName;
-    private String gaurdianMobile;
-    private String gaurdianEmailId;
+    @Embedded
+    private Gaurdian gaurdian;
 }
