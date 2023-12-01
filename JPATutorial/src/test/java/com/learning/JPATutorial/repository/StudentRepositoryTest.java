@@ -67,4 +67,10 @@ class StudentRepositoryTest {
         System.out.println("students = " + students);
 
     }
+
+    @Test
+    public void updateFirstNameStudentTable()
+    {
+        studentRepository.updateFirstNameStudentTable("raghav","raghu@gmail.com");
+    }
 }
