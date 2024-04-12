@@ -26,16 +26,13 @@ public class SecurityConfig {
         return http.build();
     }
 
-    @Configuration
-    public class SecurityConfiguration {
-        @Bean
-        public InMemoryUserDetailsManager userDetailsService() {
-            UserDetails user = User.withDefaultPasswordEncoder()
-                    .username("user")
-                    .password("password")
-                    .roles("ADMIN")
-                    .build();
-            return new InMemoryUserDetailsManager(user);
-        }
+    @Bean
+    public InMemoryUserDetailsManager userDetailsService() {
+        UserDetails user = User.withDefaultPasswordEncoder()
+                .username("user")
+                .password("password")
+                .roles("ADMIN")
+                .build();
+        return new InMemoryUserDetailsManager(user);
     }
 }
